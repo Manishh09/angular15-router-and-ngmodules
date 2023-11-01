@@ -7,9 +7,9 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class CanLoadGuard implements CanActivate, CanLoad {
-   private permServ = inject(PermissionsService);
-   private router = inject(Router);
-   private readonly userRole = 'Admin';
+  private permServ = inject(PermissionsService);
+  private router = inject(Router);
+  private readonly userRole = 'Admin';
   private isLoggedIn: boolean = false;
   private isAdmin = false;
   canActivate(

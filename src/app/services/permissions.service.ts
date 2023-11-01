@@ -13,7 +13,7 @@ export class PermissionsService {
   }
 
   isLoggedIn(): Observable<boolean> {
-    return of(false);
+    return of(true);
   }
   isLoggedOut() :  Observable<boolean>{
     return of(false);

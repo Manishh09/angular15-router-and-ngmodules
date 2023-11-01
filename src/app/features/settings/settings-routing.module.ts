@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CanActivateChildGuard } from 'src/app/core/guards/can-activate-child.guard';
-import { CanActivateGuard } from 'src/app/core/guards/can-activate.guard';
-import { CanLoadGuard } from 'src/app/core/guards/can-load.guard';
 import { SettingsComponent } from './settings.component';
+import { CanActivateChildGuard } from 'src/app/core/guards/can-activate-child/can-activate-child.guard';
+import { CanActivateGuard } from 'src/app/core/guards/can-activate/can-activate.guard';
+import { CanLoadGuard } from 'src/app/core/guards/can-load/can-load.guard';
 
 const routes: Routes = [
   { 

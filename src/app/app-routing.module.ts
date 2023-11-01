@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CanLoadGuard } from './core/guards/can-load.guard';
+import { CanLoadGuard } from './core/guards/can-load/can-load.guard';
 import { LoginComponent } from './login.component';
 
 const routes: Routes = [
