@@ -1,34 +1,52 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CanLoadGuard } from './core/guards/can-load/can-load.guard';
-import { LoginComponent } from './login.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { EditAboutComponent } from './components/about/edit-about/edit-about.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
-  {
-    path: 'settings',
-    loadChildren: () =>
-      import('./features/settings/settings.module').then(
-        (m) => m.SettingsModule
-      ),
-    canLoad: [CanLoadGuard],
+  { 
+    path: '', component: LoginComponent 
   },
+
   {
     path: 'home',
-    loadChildren: () =>
-      import('./features/home/home.module').then((m) => m.HomeModule),
-    canLoad: [CanLoadGuard],
+    component: HomeComponent
   },
+
+  {
+    path: 'contact',
+    component: ContactComponent
+  },
+
+
+  {
+    path: 'about',
+    component: AboutComponent,
+    children: [
+      {
+        path: 'edit',
+        component: EditAboutComponent
+      }
+    ]
+  },
+
+  {
+    path: 'gallery',
+    loadChildren: () => import('./features/gallery/gallery.module').then(m => m.GalleryModule)
+  },
+  
   {
     path: 'users',
     loadChildren: () =>
       import('./features/users/users.module').then((m) => m.UsersModule),
     canLoad: [CanLoadGuard],
   },
-  {
-    path: '**',
-    redirectTo: 'home',
-  },
+   
+  
 ];
 
 @NgModule({

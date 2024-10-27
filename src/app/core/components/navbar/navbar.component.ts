@@ -13,18 +13,35 @@ import { Component, OnInit } from '@angular/core';
           <a class="nav-link" routerLinkActive="active">Home</a>
         </li>
 
-        <li class="nav-item" routerLink="/settings">
-          <a class="nav-link" routerLinkActive="active">Settings</a>
-        </li>
+       
 
         <li class="nav-item" routerLink="/users">
           <a class="nav-link" routerLinkActive="active">Users</a>
         </li>
+
+        <li class="nav-item" routerLink="/gallery">
+          <a class="nav-link" routerLinkActive="active">Gallery</a>
+        </li>
+
+        <li class="nav-item" routerLink="/contact">
+          <a class="nav-link" routerLinkActive="active">Contact</a>
+        </li>
+
+        <li class="nav-item" routerLink="/about">
+          <a class="nav-link" routerLinkActive="active">About</a>
+        </li>
+
       </ul>
     </div>
   </nav>
   `,
   styles: [
+    `
+    li {
+      cursor: pointer
+    }
+    
+    `
   ]
 })
 export class NavbarComponent implements OnInit {
